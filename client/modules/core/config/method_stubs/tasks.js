@@ -6,8 +6,11 @@ export default function ({Meteor, Collections}) {
       check(_id, String)
       check(text, String)
 
+      let now = new Date()
+
       const task = {
         _id, text,
+        createdAt: now,
         saving: true
       }
 

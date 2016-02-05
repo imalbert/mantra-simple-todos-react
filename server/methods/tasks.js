@@ -8,11 +8,12 @@ export default function () {
       check(_id, String)
       check(text, String)
 
+      let now = new Date()
       // Show the latency compensations
       Meteor._sleepForMs(500)
 
       // XXX: Do some user authorization
-      const task = {_id, text}
+      const task = {_id, text, createdAt: now}
       Tasks.insert(task)
     }
   })
