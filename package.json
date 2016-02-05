@@ -1,0 +1,22 @@
+{
+  "name": "mantra-simple-todos-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "domready": "^1.0.8",
+    "mantra-core": "^1.2.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-komposer": "^1.3.0",
+    "react-mounter": "^1.0.0",
+    "react-simple-di": "^1.0.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
