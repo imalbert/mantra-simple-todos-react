@@ -19,11 +19,13 @@ class NewTask extends React.Component {
     )
   }
 
-  createTask () {
+  createTask (event) {
+    event.preventDefault()
     const {create} = this.props
     const {textInput} = this.refs
 
     create(textInput.value)
+    textInput.value = ''
   }
 }
 

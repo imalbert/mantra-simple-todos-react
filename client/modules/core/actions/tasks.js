@@ -15,7 +15,8 @@ export default {
         return LocalState.set('SAVING_ERROR', error.message)
       }
     })
-    FlowRouter.go(`/post/${id}`)
+  // FlowRouter.go('/')
+  // FlowRouter.go(`/task/${id}`)
   },
 
   clearErrors({LocalState}) {

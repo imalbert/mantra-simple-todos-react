@@ -1,13 +1,11 @@
 import React from 'react'
 
-import NewTask from './newtask.jsx'
-
-const Layout = ({content = () => null}) => (
+const Layout = ({content = () => null, newTask}) => (
   <div className='container'>
     <header>
       <h1>Todo List</h1>
 
-      <NewTask />
+      {newTask()}
     </header>
 
     <div>{content()}</div>
