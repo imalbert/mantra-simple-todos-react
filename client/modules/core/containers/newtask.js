@@ -11,7 +11,7 @@ export const composer = ({context, clearErrors}, onData) => {
 }
 
 export const depsMapper = (context, actions) => ({
-  create: actions.tasks.createTask,
+  create: actions.tasks.create,
   clearErrors: actions.tasks.clearErrors,
   context: () => context
 })
