@@ -11,7 +11,14 @@ export const composer = ({context}, onData) => {
   }
 }
 
+export const depsMapper = (context, actions) => ({
+  toggle: actions.tasks.toggle,
+  del: actions.tasks.del,
+  clearErrors: actions.tasks.clearErrors,
+  context: () => context
+})
+
 export default composeAll(
   composeWithTracker(composer),
-  useDeps()
+  useDeps(depsMapper)
 )(TaskList)

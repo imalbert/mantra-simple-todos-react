@@ -1,5 +1,5 @@
 export default {
-  create({Meteor, LocalState, FlowRouter}, text) {
+  create ({Meteor, LocalState, FlowRouter}, text) {
     if (!text) {
       return LocalState.set('SAVING_ERROR', 'Task text is required!')
     }
@@ -15,11 +15,29 @@ export default {
         return LocalState.set('SAVING_ERROR', error.message)
       }
     })
-  // FlowRouter.go('/')
-  // FlowRouter.go(`/task/${id}`)
   },
 
-  clearErrors({LocalState}) {
+  toggle ({Meteor, LocalState}, id, checked) {
+    LocalState.set('SAVING_ERROR', null)
+
+    Meteor.call('tasks.toggle', id, checked, (error) => {
+      if (error) {
+        return LocalState.set('UPDATE_ERROR', error.message)
+      }
+    })
+  },
+
+  del ({Meteor, LocalState}, id) {
+    LocalState.set('SAVING_ERROR', null)
+
+    Meteor.call('tasks.delete', id, (error) => {
+      if (error) {
+        return LocalState.set('DELETE_ERROR', error.message)
+      }
+    })
+  },
+
+  clearErrors ({LocalState}) {
     return LocalState.set('SAVING_ERROR', null)
   }
 }
